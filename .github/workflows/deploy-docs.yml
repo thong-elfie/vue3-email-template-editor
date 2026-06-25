@@ -1,8 +1,8 @@
 name: Deploy Docs to GitHub Pages
 
 on:
-  push:
-    branches: [main]
+  # GitHub Pages requires a public repo (or a paid plan for private repos).
+  # Re-enable the `push` trigger once Pages is available for this repo.
   workflow_dispatch:
 
 permissions:
