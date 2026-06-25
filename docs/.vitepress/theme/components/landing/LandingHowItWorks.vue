@@ -13,7 +13,7 @@
           <span class="hiw__num">01</span>
           <h3 class="hiw__card-title">Install the package</h3>
           <div class="hiw__code">
-            <code>npm i @lab2view/vue-email-editor</code>
+            <code>npm i vue3-email-template-editor</code>
           </div>
         </div>
 

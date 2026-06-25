@@ -5,13 +5,13 @@ The package provides 35+ named exports for advanced usage.
 ## Component
 
 ```ts
-import { EmailEditor } from '@lab2view/vue-email-editor'
+import { EmailEditor } from 'vue3-email-template-editor'
 ```
 
 ## Labels & i18n
 
 ```ts
-import { DEFAULT_LABELS, FR_LABELS } from '@lab2view/vue-email-editor'
+import { DEFAULT_LABELS, FR_LABELS } from 'vue3-email-template-editor'
 ```
 
 | Export | Type | Description |
@@ -22,7 +22,7 @@ import { DEFAULT_LABELS, FR_LABELS } from '@lab2view/vue-email-editor'
 ## Serialization
 
 ```ts
-import { compileMjml, documentToMjml, mjmlToDocument } from '@lab2view/vue-email-editor'
+import { compileMjml, documentToMjml, mjmlToDocument } from 'vue3-email-template-editor'
 ```
 
 | Export | Signature | Description |
@@ -46,7 +46,7 @@ import {
   createSocial,
   createHero,
   createWrapper,
-} from '@lab2view/vue-email-editor'
+} from 'vue3-email-template-editor'
 ```
 
 | Factory | Description |
@@ -66,7 +66,7 @@ import {
 ## Tree Utilities
 
 ```ts
-import { findNode, findParent, removeNode, moveNode, cloneSubtree } from '@lab2view/vue-email-editor'
+import { findNode, findParent, removeNode, moveNode, cloneSubtree } from 'vue3-email-template-editor'
 ```
 
 | Utility | Signature | Description |
@@ -86,7 +86,7 @@ import {
   CONTENT_NODE_TYPES,
   CONTAINER_NODE_TYPES,
   SELF_CLOSING_NODE_TYPES,
-} from '@lab2view/vue-email-editor'
+} from 'vue3-email-template-editor'
 ```
 
 | Constant | Type | Description |
@@ -100,7 +100,7 @@ import {
 ## Type Guard
 
 ```ts
-import { isNewEditorJson } from '@lab2view/vue-email-editor'
+import { isNewEditorJson } from 'vue3-email-template-editor'
 ```
 
 | Export | Description |
@@ -135,5 +135,5 @@ import type {
   DragSource,
   DropTarget,
   DropPosition,
-} from '@lab2view/vue-email-editor'
+} from 'vue3-email-template-editor'
 ```

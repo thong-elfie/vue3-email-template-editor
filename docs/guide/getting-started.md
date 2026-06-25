@@ -3,7 +3,7 @@
 ## Installation
 
 ```bash
-npm install @lab2view/vue-email-editor
+npm install vue3-email-template-editor
 ```
 
 ### Peer Dependencies
@@ -19,8 +19,8 @@ npm install vue@^3.4 mjml-browser@^4.15
 ```vue
 <script setup lang="ts">
 import { ref } from 'vue'
-import { EmailEditor } from '@lab2view/vue-email-editor'
-import '@lab2view/vue-email-editor/style.css'
+import { EmailEditor } from 'vue3-email-template-editor'
+import 'vue3-email-template-editor/style.css'
 
 const editorRef = ref()
 const mjml = ref('')
@@ -57,8 +57,8 @@ The `v-model` binding gives you the **MJML source** string. You also get:
 ```vue
 <script setup lang="ts">
 import { ref } from 'vue'
-import { EmailEditor } from '@lab2view/vue-email-editor'
-import '@lab2view/vue-email-editor/style.css'
+import { EmailEditor } from 'vue3-email-template-editor'
+import 'vue3-email-template-editor/style.css'
 
 const editorRef = ref()
 const designJson = ref()
@@ -101,8 +101,8 @@ function exportHtml() {
 
 ```vue
 <script setup lang="ts">
-import { EmailEditor, FR_LABELS } from '@lab2view/vue-email-editor'
-import '@lab2view/vue-email-editor/style.css'
+import { EmailEditor, FR_LABELS } from 'vue3-email-template-editor'
+import 'vue3-email-template-editor/style.css'
 </script>
 
 <template>

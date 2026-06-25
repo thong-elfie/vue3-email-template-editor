@@ -82,7 +82,7 @@ import {
   createSocial,
   createHero,
   createWrapper,
-} from '@lab2view/vue-email-editor'
+} from 'vue3-email-template-editor'
 
 // Create a text node
 const text = createText('<p>Hello world</p>', {

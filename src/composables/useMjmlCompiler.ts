@@ -14,12 +14,14 @@ export interface MjmlCompilationResult {
   errors: MjmlError[]
 }
 
-let mjml2htmlFn: ((source: string) => { html: string; errors: MjmlError[] }) | null = null
+type Mjml2HtmlFn = (source: string) => { html: string; errors: MjmlError[] }
 
-async function loadMjml() {
+let mjml2htmlFn: Mjml2HtmlFn | null = null
+
+async function loadMjml(): Promise<Mjml2HtmlFn> {
   if (!mjml2htmlFn) {
     const mod = await import('mjml-browser')
-    mjml2htmlFn = mod.default
+    mjml2htmlFn = mod.default as unknown as Mjml2HtmlFn
   }
   return mjml2htmlFn
 }

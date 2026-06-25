@@ -245,7 +245,7 @@ const categoryCounts = computed(() => {
         Import, customize in the editor, and export production&#8209;ready HTML.
       </p>
       <div class="gallery__install-hint">
-        <code class="gallery__install-code">import { starterTemplates } from '@lab2view/vue-email-editor'</code>
+        <code class="gallery__install-code">import { starterTemplates } from 'vue3-email-template-editor'</code>
       </div>
     </div>
 

@@ -69,7 +69,7 @@ import { withBase } from 'vitepress'
 
       <!-- Description -->
       <p class="cta__desc">
-        Join developers and marketing teams who trust vue-email-editor<br>
+        Join developers and marketing teams who trust vue3-email-template-editor<br>
         to create stunning, responsive emails without writing HTML.
       </p>
 
@@ -79,7 +79,7 @@ import { withBase } from 'vitepress'
           Get Started
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
         </a>
-        <a href="https://github.com/lab2view/vue-email-editor" target="_blank" rel="noopener" class="cta__btn cta__btn--ghost">
+        <a href="https://github.com/thong-elfie/vue3-email-template-editor" target="_blank" rel="noopener" class="cta__btn cta__btn--ghost">
           View on GitHub
         </a>
       </div>
@@ -107,7 +107,7 @@ import { withBase } from 'vitepress'
       <!-- Install command -->
       <div class="cta__install">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#64748B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
-        <code>npm install @lab2view/vue-email-editor</code>
+        <code>npm install vue3-email-template-editor</code>
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#64748B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
       </div>
     </div>

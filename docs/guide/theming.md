@@ -102,7 +102,7 @@ The editor's appearance is fully customizable via CSS variables. Pass a `theme` 
 The theme is applied via CSS custom properties on the `.ebb-shell` root element. All internal components reference these variables instead of hardcoded colors, so changes propagate everywhere instantly.
 
 ```ts
-import { DEFAULT_THEME } from '@lab2view/vue-email-editor'
+import { DEFAULT_THEME } from 'vue3-email-template-editor'
 
 // Access all default values
 console.log(DEFAULT_THEME.primaryColor) // '#01A8AB'

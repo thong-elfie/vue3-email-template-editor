@@ -2,20 +2,20 @@ import { defineConfig } from 'vitepress'
 import { resolve } from 'path'
 
 export default defineConfig({
-  title: '@lab2view/vue-email-editor',
+  title: 'vue3-email-template-editor',
   description: 'Professional and extensible drag & drop email editor for Vue 3, powered by MJML.',
-  base: '/vue-email-editor/',
+  base: '/vue3-email-template-editor/',
   appearance: true,
 
   head: [
-    ['link', { rel: 'icon', href: '/vue-email-editor/logo.png' }],
+    ['link', { rel: 'icon', href: '/vue3-email-template-editor/logo.png' }],
     ['link', { rel: 'preconnect', href: 'https://fonts.googleapis.com' }],
     ['link', { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' }],
     ['link', { href: 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Newsreader:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=JetBrains+Mono:wght@400;500;600;700&display=swap', rel: 'stylesheet' }],
     ['meta', { property: 'og:title', content: 'Vue Email Editor — Drag & Drop Email Editor for Vue 3' }],
     ['meta', { property: 'og:description', content: 'Professional, extensible email editor powered by MJML. Free and open-source.' }],
     ['meta', { property: 'og:type', content: 'website' }],
-    ['meta', { property: 'og:url', content: 'https://lab2view.github.io/vue-email-editor/' }],
+    ['meta', { property: 'og:url', content: 'https://thong-elfie.github.io/vue3-email-template-editor/' }],
     ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
   ],
 
@@ -28,8 +28,8 @@ export default defineConfig({
       {
         text: 'v0.1.0',
         items: [
-          { text: 'Changelog', link: 'https://github.com/lab2view/vue-email-editor/releases' },
-          { text: 'npm', link: 'https://www.npmjs.com/package/@lab2view/vue-email-editor' },
+          { text: 'Changelog', link: 'https://github.com/thong-elfie/vue3-email-template-editor/releases' },
+          { text: 'npm', link: 'https://www.npmjs.com/package/vue3-email-template-editor' },
         ],
       },
     ],
@@ -76,8 +76,8 @@ export default defineConfig({
     },
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/lab2view/vue-email-editor' },
-      { icon: 'npm', link: 'https://www.npmjs.com/package/@lab2view/vue-email-editor' },
+      { icon: 'github', link: 'https://github.com/thong-elfie/vue3-email-template-editor' },
+      { icon: 'npm', link: 'https://www.npmjs.com/package/vue3-email-template-editor' },
     ],
 
     search: {
@@ -86,18 +86,18 @@ export default defineConfig({
 
     footer: {
       message: 'Released under the MIT License.',
-      copyright: '© Lab2view — All rights reserved',
+      copyright: '© thong-elfie — All rights reserved',
     },
 
     editLink: {
-      pattern: 'https://github.com/lab2view/vue-email-editor/edit/main/docs/:path',
+      pattern: 'https://github.com/thong-elfie/vue3-email-template-editor/edit/main/docs/:path',
     },
   },
 
   vite: {
     resolve: {
       alias: {
-        '@lab2view/vue-email-editor': resolve(__dirname, '../../src/index.ts'),
+        'vue3-email-template-editor': resolve(__dirname, '../../src/index.ts'),
       },
     },
     optimizeDeps: {

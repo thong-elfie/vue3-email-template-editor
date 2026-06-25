@@ -243,8 +243,8 @@
 - [ ] Discord ou GitHub Discussions
 
 ### J.3 Ecosysteme de plugins
-- [ ] Plugin officiel : `@lab2view/vue-email-editor-plugin-ai`
-- [ ] Plugin officiel : `@lab2view/vue-email-editor-plugin-unsplash` (images gratuites)
+- [ ] Plugin officiel : `vue3-email-template-editor-plugin-ai`
+- [ ] Plugin officiel : `vue3-email-template-editor-plugin-unsplash` (images gratuites)
 - [ ] Guide "Create your own plugin" dans la doc
 - [ ] Registry de plugins communautaires
 

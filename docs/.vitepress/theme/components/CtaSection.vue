@@ -13,12 +13,12 @@
           Get Started
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
         </a>
-        <a href="https://github.com/lab2view/vue-email-editor" class="cta-btn cta-btn--secondary" target="_blank" rel="noopener">
+        <a href="https://github.com/thong-elfie/vue3-email-template-editor" class="cta-btn cta-btn--secondary" target="_blank" rel="noopener">
           View on GitHub
         </a>
       </div>
       <p class="cta-section__install">
-        <code>npm install @lab2view/vue-email-editor</code>
+        <code>npm install vue3-email-template-editor</code>
       </p>
     </div>
   </section>

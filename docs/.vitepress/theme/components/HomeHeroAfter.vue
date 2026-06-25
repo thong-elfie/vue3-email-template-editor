@@ -82,8 +82,8 @@ onUnmounted(() => {
 
         <div class="home-code__block">
           <pre><code><span class="code-tag">&lt;script</span> <span class="code-attr">setup</span><span class="code-tag">&gt;</span>
-<span class="code-keyword">import</span> { <span class="code-tag">EmailEditor</span> } <span class="code-keyword">from</span> <span class="code-string">'@lab2view/vue-email-editor'</span>
-<span class="code-keyword">import</span> <span class="code-string">'@lab2view/vue-email-editor/style.css'</span>
+<span class="code-keyword">import</span> { <span class="code-tag">EmailEditor</span> } <span class="code-keyword">from</span> <span class="code-string">'vue3-email-template-editor'</span>
+<span class="code-keyword">import</span> <span class="code-string">'vue3-email-template-editor/style.css'</span>
 <span class="code-tag">&lt;/script&gt;</span>
 
 <span class="code-tag">&lt;template&gt;</span>

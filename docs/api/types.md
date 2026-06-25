@@ -3,7 +3,7 @@
 All types are exported from the package and can be imported:
 
 ```ts
-import type { EmailDocument, EmailNode, Plugin } from '@lab2view/vue-email-editor'
+import type { EmailDocument, EmailNode, Plugin } from 'vue3-email-template-editor'
 ```
 
 ## Core Types

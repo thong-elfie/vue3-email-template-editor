@@ -9,8 +9,8 @@ Use the imperative API via template ref:
 ```vue
 <script setup>
 import { ref, onMounted } from 'vue'
-import { EmailEditor } from '@lab2view/vue-email-editor'
-import '@lab2view/vue-email-editor/style.css'
+import { EmailEditor } from 'vue3-email-template-editor'
+import 'vue3-email-template-editor/style.css'
 
 const editor = ref()
 

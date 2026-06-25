@@ -1,4 +1,4 @@
-# Contributing to @lab2view/vue-email-editor
+# Contributing to vue3-email-template-editor
 
 Thank you for your interest in contributing! This guide will help you get started.
 
@@ -6,8 +6,8 @@ Thank you for your interest in contributing! This guide will help you get starte
 
 ```bash
 # Clone the repository
-git clone https://github.com/lab2view/vue-email-editor.git
-cd vue-email-editor
+git clone https://github.com/thong-elfie/vue3-email-template-editor.git
+cd vue3-email-template-editor
 
 # Install dependencies
 npm install
@@ -121,9 +121,9 @@ See the [Plugin System](#) section in README.md for the `PluginContext` API.
 
 ## Questions?
 
-- Open a [GitHub Discussion](https://github.com/lab2view/vue-email-editor/discussions)
-- File a [bug report](https://github.com/lab2view/vue-email-editor/issues/new?template=bug_report.md)
-- Request a [feature](https://github.com/lab2view/vue-email-editor/issues/new?template=feature_request.md)
+- Open a [GitHub Discussion](https://github.com/thong-elfie/vue3-email-template-editor/discussions)
+- File a [bug report](https://github.com/thong-elfie/vue3-email-template-editor/issues/new?template=bug_report.md)
+- Request a [feature](https://github.com/thong-elfie/vue3-email-template-editor/issues/new?template=feature_request.md)
 
 ## License
 

@@ -7,8 +7,8 @@ Access the editor programmatically via a Vue template ref. The editor exposes **
 ```vue
 <script setup>
 import { ref } from 'vue'
-import { EmailEditor } from '@lab2view/vue-email-editor'
-import '@lab2view/vue-email-editor/style.css'
+import { EmailEditor } from 'vue3-email-template-editor'
+import 'vue3-email-template-editor/style.css'
 
 const editor = ref()
 </script>
@@ -40,7 +40,7 @@ console.log(doc.body.children.length) // Number of sections
 Replaces the entire document.
 
 ```ts
-import { createDefaultDocument } from '@lab2view/vue-email-editor'
+import { createDefaultDocument } from 'vue3-email-template-editor'
 editor.value.setDocument(createDefaultDocument())
 ```
 
@@ -158,7 +158,7 @@ if (newId) {
 Insert a block definition into a parent node.
 
 ```ts
-import { createText } from '@lab2view/vue-email-editor'
+import { createText } from 'vue3-email-template-editor'
 
 editor.value.insertBlock(
   {
@@ -201,7 +201,7 @@ editor.value.off('editor:change', onChange)
 The full API is typed via the `EmailEditorAPI` interface:
 
 ```ts
-import type { EmailEditorAPI } from '@lab2view/vue-email-editor'
+import type { EmailEditorAPI } from 'vue3-email-template-editor'
 
 const editor = ref<InstanceType<typeof EmailEditor> & EmailEditorAPI>()
 ```

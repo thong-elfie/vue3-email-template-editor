@@ -7,7 +7,7 @@ The plugin system lets you extend the editor with custom blocks, categories, too
 A plugin is a function that receives a `PluginContext`:
 
 ```ts
-import type { Plugin } from '@lab2view/vue-email-editor'
+import type { Plugin } from 'vue3-email-template-editor'
 
 const myPlugin: Plugin = (ctx) => {
   // Use ctx to register extensions
@@ -25,8 +25,8 @@ Plugins are initialized **before** the `editor:ready` event fires.
 ## Adding Custom Blocks
 
 ```ts
-import type { Plugin } from '@lab2view/vue-email-editor'
-import { createText, createImage, createSection, createColumn } from '@lab2view/vue-email-editor'
+import type { Plugin } from 'vue3-email-template-editor'
+import { createText, createImage, createSection, createColumn } from 'vue3-email-template-editor'
 
 const brandPlugin: Plugin = (ctx) => {
   // Simple block

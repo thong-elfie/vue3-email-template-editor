@@ -25,8 +25,8 @@ Provide an `aiProvider` prop implementing the `AiProvider` interface:
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import { EmailEditor } from '@lab2view/vue-email-editor'
-import type { AiProvider, MergeTag } from '@lab2view/vue-email-editor'
+import { EmailEditor } from 'vue3-email-template-editor'
+import type { AiProvider, MergeTag } from 'vue3-email-template-editor'
 
 const mjml = ref('')
 
@@ -68,7 +68,7 @@ A complete, copy-paste example with a Node.js/Express backend and OpenAI.
 npm install express openai cors
 
 # Frontend (already done if you installed the editor)
-npm install @lab2view/vue-email-editor
+npm install vue3-email-template-editor
 ```
 
 ### 2. Backend — `server.js`
@@ -136,8 +136,8 @@ app.listen(3001, () => console.log('AI backend running on http://localhost:3001'
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import { EmailEditor } from '@lab2view/vue-email-editor'
-import type { AiProvider } from '@lab2view/vue-email-editor'
+import { EmailEditor } from 'vue3-email-template-editor'
+import type { AiProvider } from 'vue3-email-template-editor'
 
 const mjml = ref('')
 
@@ -360,7 +360,7 @@ app.post('/api/ai/text', async (req, res) => {
 Use this provider to develop and test without an API key:
 
 ```ts
-import type { AiProvider } from '@lab2view/vue-email-editor'
+import type { AiProvider } from 'vue3-email-template-editor'
 
 const mockAiProvider: AiProvider = {
   generateText: async (prompt) => {
@@ -552,7 +552,7 @@ The editor generates a detailed system prompt via `buildTemplateSystemPrompt()`.
 You can customize the prompt with `promptPrefix` and `promptSuffix`:
 
 ```ts
-import { buildTemplateSystemPrompt } from '@lab2view/vue-email-editor'
+import { buildTemplateSystemPrompt } from 'vue3-email-template-editor'
 
 const systemPrompt = buildTemplateSystemPrompt({
   mergeTags,

@@ -10,7 +10,7 @@ Building a good email editor is hard. Existing solutions are either:
 
 ## Our Approach
 
-`@lab2view/vue-email-editor` is a **Vue 3 native**, **MJML-powered**, **open-source** email editor that gives you everything the paid solutions offer — for free.
+`vue3-email-template-editor` is a **Vue 3 native**, **MJML-powered**, **open-source** email editor that gives you everything the paid solutions offer — for free.
 
 ## Comparison
 
