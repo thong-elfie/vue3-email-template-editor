@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EmailEditor E2E Harness</title>
+    <style>
+      html, body, #app { height: 100%; margin: 0; }
+      .harness { display: flex; flex-direction: column; height: 100vh; }
+      .harness__controls { display: flex; gap: 8px; padding: 8px; border-bottom: 1px solid #ddd; flex-wrap: wrap; }
+      .harness__editor { flex: 1; min-height: 0; }
+      .harness__out { display: none; }
+    </style>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="./main.ts"></script>
+  </body>
+</html>

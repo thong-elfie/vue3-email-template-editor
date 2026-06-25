@@ -1,177 +1,177 @@
-# Roadmap — Dominer le marche des editeurs email
+# Roadmap — Dominate the email editor market
 
-## Positionnement
+## Positioning
 
-**La formule gagnante** : L'open-source de GrapesJS + les features d'Unlayer + la DX de Vue 3
+**The winning formula**: GrapesJS open-source + Unlayer features + Vue 3 DX
 
-**Message cle** : "Tout ce qu'Unlayer facture $750/mois, inclus gratuitement."
+**Key message**: "Everything Unlayer charges $750/month for, included free."
 
-## Contexte concurrentiel
+## Competitive landscape
 
-| | Prix | Vue natif | Open source | MJML | Blocs custom | Merge tags |
+| | Price | Vue native | Open source | MJML | Custom blocks | Merge tags |
 |---|---|---|---|---|---|---|
-| **Nous (actuel)** | Gratuit | Oui | MIT | Oui | Oui (gratuit) | Basique |
-| **Unlayer** | $250-2000/mois | Wrapper | Non | Non | $750+/mois | $750+/mois |
-| **Beefree** | Tiers payes | Non | Non | Non | Payant | Payant |
-| **GrapesJS** | Gratuit | Non | BSD | Plugin | Oui | Custom |
+| **Us (current)** | Free | Yes | MIT | Yes | Yes (free) | Basic |
+| **Unlayer** | $250-2000/mo | Wrapper | No | No | $750+/mo | $750+/mo |
+| **Beefree** | Paid tiers | No | No | No | Paid | Paid |
+| **GrapesJS** | Free | No | BSD | Plugin | Yes | Custom |
 
-**Nos avantages actuels** : Vue 3 natif, MJML, TypeScript, plugin system, 43 blocs, gratuit
-**Nos faiblesses** : DnD basique, pas d'upload image, peu de templates, pas de doc site, pas de merge tags inline
+**Our current advantages**: native Vue 3, MJML, TypeScript, plugin system, 43 blocks, free
+**Our current weaknesses**: basic DnD, no image upload, few templates, no docs site, no inline merge tags
 
 ---
 
-## Sprint A — Stabilite & Tests E2E (1 semaine)
+## Sprint A — Stability & E2E tests (1 week)
 
-*Objectif : Base solide avant d'ajouter des features. Zero regression.*
+*Goal: a solid foundation before adding features. Zero regression.*
 
-### A.1 Tests d'integration composant
-- [ ] `EmailEditor.spec.ts` — mount, expose API, plugins init
-- [ ] Test workflow complet : load template -> edit -> undo -> export MJML/HTML/JSON
-- [ ] Test drag & drop : ajouter bloc, reorder, supprimer
+### A.1 Component integration tests
+- [x] `EmailEditor.spec.ts` — mount, expose API, plugins init
+- [x] Full workflow test: load template -> edit -> undo -> export MJML/HTML/JSON
+- [x] Drag & drop test: add block, reorder, delete
 
-### A.2 Tests E2E avec Playwright
-- [ ] Setup Playwright avec un app de test minimal (Vue + EmailEditor)
-- [ ] Scenario : ouvrir editeur -> ajouter bloc texte -> editer -> export HTML
-- [ ] Scenario : charger template -> modifier -> undo -> verifier contenu
-- [ ] Scenario : mobile preview -> verifier largeur iframe
-- [ ] CI GitHub Actions : typecheck + vitest + playwright sur chaque PR
+### A.2 E2E tests with Playwright
+- [x] Set up Playwright with a minimal test app (Vue + EmailEditor)
+- [x] Scenario: open editor -> add text block -> edit -> export HTML
+- [x] Scenario: load template -> modify -> undo -> verify content
+- [x] Scenario: mobile preview -> verify iframe width
+- [x] GitHub Actions CI: typecheck + vitest + playwright on every PR
 
 ### A.3 Regression guards
-- [ ] Snapshot tests sur les exports MJML (templates starters)
-- [ ] Visual regression tests sur les blocs composites (screenshot comparisons)
+- [x] Snapshot tests on MJML exports (starter templates)
+- [x] Visual regression tests on composite blocks (screenshot comparisons)
 
 ---
 
-## Sprint B — DX & Documentation (1 semaine)
+## Sprint B — DX & Documentation (1 week)
 
-*Objectif : Les developpeurs doivent pouvoir decouvrir, comprendre et integrer en < 10 minutes.*
+*Goal: developers must be able to discover, understand, and integrate in < 10 minutes.*
 
-### B.1 Site de documentation (VitePress)
-- [ ] Setup VitePress dans `docs/`
-- [ ] Guide "Getting Started" avec copier-coller qui marche
-- [ ] Guide "Theming" avec live preview
-- [ ] Guide "Plugins" avec exemples concrets
-- [ ] Reference API complete (generee depuis les types)
-- [ ] Deployer sur GitHub Pages ou Netlify
+### B.1 Documentation site (VitePress)
+- [ ] Set up VitePress in `docs/`
+- [ ] "Getting Started" guide with working copy-paste
+- [ ] "Theming" guide with live preview
+- [ ] "Plugins" guide with concrete examples
+- [ ] Complete API reference (generated from types)
+- [ ] Deploy to GitHub Pages or Netlify
 
-### B.2 Playground interactif
-- [ ] Demo live embeddee dans la doc (StackBlitz ou iframe)
-- [ ] Exemples : basique, theme custom, plugin custom, FR labels
-- [ ] Lien "Edit on StackBlitz" dans le README
+### B.2 Interactive playground
+- [ ] Live demo embedded in the docs (StackBlitz or iframe)
+- [ ] Examples: basic, custom theme, custom plugin, FR labels
+- [ ] "Edit on StackBlitz" link in the README
 
-### B.3 Storybook (optionnel)
-- [ ] Stories pour chaque bloc (layout, content, composite)
-- [ ] Stories pour le theme system
-- [ ] Stories pour les property editors
+### B.3 Storybook (optional)
+- [ ] Stories for each block (layout, content, composite)
+- [ ] Stories for the theme system
+- [ ] Stories for the property editors
 
 ---
 
-## Sprint C — Image Upload & Asset Manager (1 semaine)
+## Sprint C — Image Upload & Asset Manager (1 week)
 
-*Objectif : Feature #1 manquante. Sans ca, aucun usage production serieux.*
+*Goal: the #1 missing feature. Without it, no serious production use.*
 
-### C.1 Callback d'upload
-- [ ] Prop `onImageUpload: (file: File) => Promise<string>` sur EmailEditor
-- [ ] Le consommateur gere son propre storage (S3, Cloudinary, etc.)
-- [ ] UI : bouton "Upload" dans le property editor image + drag & drop sur le champ
-- [ ] Preview immediate avec URL.createObjectURL pendant l'upload
-- [ ] Gestion erreur (taille max, format invalide)
+### C.1 Upload callback
+- [ ] `onImageUpload: (file: File) => Promise<string>` prop on EmailEditor
+- [ ] The consumer handles their own storage (S3, Cloudinary, etc.)
+- [ ] UI: "Upload" button in the image property editor + drag & drop on the field
+- [ ] Immediate preview with URL.createObjectURL during upload
+- [ ] Error handling (max size, invalid format)
 
 ### C.2 Asset Manager
-- [ ] Prop `onBrowseAssets?: () => Promise<string>` — ouvre le picker du consommateur
-- [ ] Ou prop `assets?: string[]` — liste d'URLs a afficher dans un picker integre
-- [ ] Galerie d'images avec recherche, preview, selection
-- [ ] Historique des images uploadees (session-only ou persistable via callback)
+- [ ] `onBrowseAssets?: () => Promise<string>` prop — opens the consumer's picker
+- [ ] Or `assets?: string[]` prop — list of URLs shown in a built-in picker
+- [ ] Image gallery with search, preview, selection
+- [ ] History of uploaded images (session-only or persistable via callback)
 
-### C.3 Image editing basique
+### C.3 Basic image editing
 - [ ] Crop ratio presets (1:1, 16:9, 4:3)
-- [ ] Redimensionnement avec contrainte de ratio
-- [ ] Alt text obligatoire (a11y)
+- [ ] Resize with ratio constraint
+- [ ] Required alt text (a11y)
 
 ---
 
-## Sprint D — Drag & Drop avance (1-2 semaines)
+## Sprint D — Advanced Drag & Drop (1-2 weeks)
 
-*Objectif : L'UX de drag doit etre au niveau Unlayer. C'est le "wow factor".*
+*Goal: drag UX must match Unlayer. This is the "wow factor".*
 
 ### D.1 Ghost preview
-- [ ] Lors du drag depuis le sidebar, afficher un ghost translucide du bloc
-- [ ] Le ghost suit la souris avec offset
-- [ ] Animation de "place" quand on drop
+- [ ] While dragging from the sidebar, show a translucent ghost of the block
+- [ ] The ghost follows the cursor with an offset
+- [ ] "Place" animation on drop
 
-### D.2 Drop zones ameliorees
-- [ ] Indicateurs visuels clairs : ligne bleue entre les blocs, zone highlight dans les colonnes
-- [ ] "Snap" guides quand on s'approche d'une zone de drop
-- [ ] Feedback visuel quand le drop est invalide (zone rouge)
+### D.2 Improved drop zones
+- [ ] Clear visual indicators: blue line between blocks, zone highlight in columns
+- [ ] "Snap" guides when approaching a drop zone
+- [ ] Visual feedback when the drop is invalid (red zone)
 
-### D.3 Drag depuis le canvas
-- [ ] Reorder par drag & drop directement dans le canvas (pas seulement via Layers)
-- [ ] Handle de drag sur hover (icone grip a gauche du bloc)
-- [ ] Auto-scroll quand on drag pres des bords
+### D.3 Drag from the canvas
+- [ ] Reorder by drag & drop directly in the canvas (not just via Layers)
+- [ ] Drag handle on hover (grip icon to the left of the block)
+- [ ] Auto-scroll when dragging near the edges
 
-### D.4 Drag entre colonnes
-- [ ] Deplacer un element d'une colonne a une autre par drag
-- [ ] Redimensionner les colonnes par drag du separateur
-
----
-
-## Sprint E — Merge Tags & Variables (1 semaine)
-
-*Objectif : Feature killer. Unlayer la facture $750/mois. Nous : gratuit.*
-
-### E.1 Systeme de merge tags
-- [ ] Prop `mergeTags?: MergeTag[]` avec `{ name: string, value: string, category?: string }`
-- [ ] Ex: `[{ name: 'Prenom', value: '{{first_name}}', category: 'Contact' }]`
-- [ ] Dropdown dans l'editeur TipTap : taper `{{` declenche l'autocompletion
-- [ ] Les tags s'affichent comme des "chips" colores dans l'editeur
-- [ ] Non-editable inline, supprimables en un clic
-- [ ] Export : les tags restent en `{{first_name}}` dans le MJML/HTML
-
-### E.2 Tags dans les proprietes
-- [ ] Les champs URL, alt text, src acceptent aussi les merge tags
-- [ ] Autocompletion dans les inputs de proprietes
-
-### E.3 Preview avec donnees
-- [ ] Prop `mergeTagsPreviewData?: Record<string, string>`
-- [ ] Mode preview qui remplace les tags par les vraies valeurs
-- [ ] Toggle preview/edit dans la toolbar
+### D.4 Drag between columns
+- [ ] Move an element from one column to another by drag
+- [ ] Resize columns by dragging the separator
 
 ---
 
-## Sprint F — Templates Pro (1 semaine)
+## Sprint E — Merge Tags & Variables (1 week)
 
-*Objectif : Un catalogue qui fait pro et donne envie.*
+*Goal: killer feature. Unlayer charges $750/month. Us: free.*
 
-### F.1 Templates starters enrichis
-- [ ] 20+ templates categorises : Newsletter, Promotion, Transactionnel, Evenement, E-commerce, SaaS
-- [ ] Chaque template utilise des images placeholder de qualite (pas via.placeholder.com)
-- [ ] Previews visuelles dans le panel (thumbnail genere)
+### E.1 Merge tag system
+- [ ] `mergeTags?: MergeTag[]` prop with `{ name: string, value: string, category?: string }`
+- [ ] Ex: `[{ name: 'First name', value: '{{first_name}}', category: 'Contact' }]`
+- [ ] Dropdown in the TipTap editor: typing `{{` triggers autocompletion
+- [ ] Tags render as colored "chips" in the editor
+- [ ] Non-editable inline, removable in one click
+- [ ] Export: tags stay as `{{first_name}}` in the MJML/HTML
+
+### E.2 Tags in properties
+- [ ] URL, alt text, and src fields also accept merge tags
+- [ ] Autocompletion in property inputs
+
+### E.3 Preview with data
+- [ ] `mergeTagsPreviewData?: Record<string, string>` prop
+- [ ] Preview mode that replaces tags with real values
+- [ ] Preview/edit toggle in the toolbar
+
+---
+
+## Sprint F — Pro Templates (1 week)
+
+*Goal: a catalog that looks pro and creates desire.*
+
+### F.1 Enriched starter templates
+- [ ] 20+ categorized templates: Newsletter, Promotion, Transactional, Event, E-commerce, SaaS
+- [ ] Each template uses quality placeholder images (not via.placeholder.com)
+- [ ] Visual previews in the panel (generated thumbnail)
 
 ### F.2 Template management API
 - [ ] `onSaveTemplate?: (template: EmailDesignJson, meta: TemplateMeta) => Promise<void>`
 - [ ] `onLoadTemplates?: () => Promise<TemplateMeta[]>`
-- [ ] Le consommateur gere le stockage, l'editeur gere l'UI
-- [ ] Sauvegarder comme template depuis le menu
+- [ ] The consumer handles storage, the editor handles the UI
+- [ ] Save as template from the menu
 
-### F.3 Sections reutilisables
-- [ ] "Sauvegarder comme section" sur n'importe quelle section
-- [ ] Panel "Mes sections" dans le sidebar
-- [ ] Drag & drop des sections sauvegardees
+### F.3 Reusable sections
+- [ ] "Save as section" on any section
+- [ ] "My sections" panel in the sidebar
+- [ ] Drag & drop of saved sections
 
 ---
 
-## Sprint G — Contenu conditionnel & AI hooks (1-2 semaines)
+## Sprint G — Conditional content & AI hooks (1-2 weeks)
 
-*Objectif : Features que meme Unlayer galere a offrir. Differenciation maximale.*
+*Goal: features even Unlayer struggles to offer. Maximum differentiation.*
 
-### G.1 Blocs conditionnels
-- [ ] Wrapper `<ConditionalBlock>` avec condition sur merge tag
-- [ ] Ex: "Afficher seulement si `{{plan}}` == 'premium'"
-- [ ] UI : icone condition sur le bloc, panneau de configuration
-- [ ] Export : commentaires HTML conditionnels ou syntaxe ESP
+### G.1 Conditional blocks
+- [ ] `<ConditionalBlock>` wrapper with a merge-tag condition
+- [ ] Ex: "Show only if `{{plan}}` == 'premium'"
+- [ ] UI: condition icon on the block, configuration panel
+- [ ] Export: conditional HTML comments or ESP syntax
 
-### G.2 AI Integration hooks
-- [ ] Prop `aiProvider?: AiProvider` avec interface :
+### G.2 AI integration hooks
+- [ ] `aiProvider?: AiProvider` prop with interface:
   ```ts
   interface AiProvider {
     generateText: (prompt: string, context: string) => Promise<string>
@@ -179,108 +179,108 @@
     improveText?: (text: string, instruction: string) => Promise<string>
   }
   ```
-- [ ] Bouton "AI" dans la toolbar TipTap
-- [ ] "Generer du texte", "Ameliorer", "Raccourcir", "Traduire"
-- [ ] Le consommateur branche son propre provider (OpenAI, Anthropic, etc.)
+- [ ] "AI" button in the TipTap toolbar
+- [ ] "Generate text", "Improve", "Shorten", "Translate"
+- [ ] The consumer plugs in their own provider (OpenAI, Anthropic, etc.)
 
 ### G.3 Dark mode email preview
-- [ ] Toggle "Dark mode preview" dans la toolbar
-- [ ] Simule le rendu dark mode des clients email (Gmail, Apple Mail, Outlook)
-- [ ] Aide visuelle pour les couleurs problematiques en dark mode
+- [ ] "Dark mode preview" toggle in the toolbar
+- [ ] Simulates dark mode rendering of email clients (Gmail, Apple Mail, Outlook)
+- [ ] Visual aid for problematic colors in dark mode
 
 ---
 
-## Sprint H — Performance & Bundle (1 semaine)
+## Sprint H — Performance & Bundle (1 week)
 
-*Objectif : Plus rapide que GrapesJS, bundle plus petit qu'Unlayer.*
+*Goal: faster than GrapesJS, smaller bundle than Unlayer.*
 
 ### H.1 Lazy loading
-- [ ] Code-split les blocs composites (charge a la demande)
-- [ ] Code-split CodeMirror (deja fait) et TipTap
-- [ ] Mesurer le bundle : objectif < 200KB gzip pour le core
+- [ ] Code-split composite blocks (loaded on demand)
+- [ ] Code-split CodeMirror (done) and TipTap
+- [ ] Measure the bundle: target < 200KB gzip for the core
 
 ### H.2 Virtual scrolling
-- [ ] Virtualiser la liste des blocs quand > 50 blocs (avec plugins)
-- [ ] Virtualiser les layers pour les gros documents
+- [ ] Virtualize the block list when > 50 blocks (with plugins)
+- [ ] Virtualize layers for large documents
 
-### H.3 Performance canvas
-- [ ] Debounce le re-render MJML (deja 300ms, verifier)
-- [ ] Optimiser les re-renders Vue avec `shallowRef` ou `markRaw` la ou possible
-- [ ] Benchmark : temps de render d'un document de 50 sections
+### H.3 Canvas performance
+- [ ] Debounce the MJML re-render (already 300ms, verify)
+- [ ] Optimize Vue re-renders with `shallowRef` or `markRaw` where possible
+- [ ] Benchmark: render time of a 50-section document
 
 ---
 
-## Sprint I — Integrations ESP (1 semaine)
+## Sprint I — ESP Integrations (1 week)
 
-*Objectif : Un avantage unique — export pre-configure pour chaque ESP.*
+*Goal: a unique advantage — pre-configured export for each ESP.*
 
 ### I.1 Export presets
-- [ ] `exportForMailchimp()` — merge tags `*|FNAME|*`, format compatible
-- [ ] `exportForSendGrid()` — handlebars `{{first_name}}`
+- [ ] `exportForMailchimp()` — `*|FNAME|*` merge tags, compatible format
+- [ ] `exportForSendGrid()` — `{{first_name}}` handlebars
 - [ ] `exportForAWS_SES()` — template variables
-- [ ] `exportForBrevo()` — merge tags `{{ contact.FIRSTNAME }}`
-- [ ] Chaque preset mappe les merge tags + applique les bonnes contraintes HTML
+- [ ] `exportForBrevo()` — `{{ contact.FIRSTNAME }}` merge tags
+- [ ] Each preset maps merge tags + applies the right HTML constraints
 
-### I.2 Documentation ESP
-- [ ] Guide d'integration par ESP dans la doc VitePress
-- [ ] Exemples copier-coller fonctionnels
+### I.2 ESP documentation
+- [ ] Per-ESP integration guide in the VitePress docs
+- [ ] Working copy-paste examples
 
 ---
 
-## Sprint J — Community & Adoption (continu)
+## Sprint J — Community & Adoption (ongoing)
 
-### J.1 Visibilite
-- [ ] Article "How we built a free Unlayer alternative" sur dev.to
-- [ ] Post sur r/vuejs, HackerNews, Product Hunt
-- [ ] Badge "Made with Vue" + "Built on MJML" dans le README
-- [ ] Comparaison detaillee dans la doc (vs Unlayer, vs GrapesJS)
-- [ ] Demo en ligne accessible sans installation
+### J.1 Visibility
+- [ ] "How we built a free Unlayer alternative" article on dev.to
+- [ ] Posts on r/vuejs, HackerNews, Product Hunt
+- [ ] "Made with Vue" + "Built on MJML" badges in the README
+- [ ] Detailed comparison in the docs (vs Unlayer, vs GrapesJS)
+- [ ] Online demo accessible without installation
 
 ### J.2 Contribution
-- [ ] CONTRIBUTING.md avec guide de dev
-- [ ] Issues "good first issue" taggees
-- [ ] Templates d'issues (bug report, feature request)
-- [ ] Discord ou GitHub Discussions
+- [ ] CONTRIBUTING.md with a dev guide
+- [ ] Tagged "good first issue" issues
+- [ ] Issue templates (bug report, feature request)
+- [ ] Discord or GitHub Discussions
 
-### J.3 Ecosysteme de plugins
-- [ ] Plugin officiel : `vue3-email-template-editor-plugin-ai`
-- [ ] Plugin officiel : `vue3-email-template-editor-plugin-unsplash` (images gratuites)
-- [ ] Guide "Create your own plugin" dans la doc
-- [ ] Registry de plugins communautaires
+### J.3 Plugin ecosystem
+- [ ] Official plugin: `vue3-email-template-editor-plugin-ai`
+- [ ] Official plugin: `vue3-email-template-editor-plugin-unsplash` (free images)
+- [ ] "Create your own plugin" guide in the docs
+- [ ] Registry of community plugins
 
 ---
 
-## Ordre de priorite
+## Priority order
 
 ```
-Sprint A (Stabilite)     ← fondation, non-negociable
+Sprint A (Stability)      ← foundation, non-negotiable
   |
-Sprint B (Documentation) ← adoption, decouverte
+Sprint B (Documentation)  ← adoption, discovery
   |
-Sprint C (Image Upload)  ← blocker #1 pour usage prod
+Sprint C (Image Upload)   ← blocker #1 for prod use
   |
-Sprint D (DnD avance)    ← wow factor, UX competitive
+Sprint D (Advanced DnD)   ← wow factor, competitive UX
   |
-Sprint E (Merge Tags)    ← killer feature gratuite vs $750/mois
+Sprint E (Merge Tags)     ← free killer feature vs $750/mo
   |
-Sprint F (Templates Pro) ← catalogue qui fait pro
+Sprint F (Pro Templates)  ← catalog that looks pro
   |
-Sprint G (AI + Conditionnel) ← differenciation unique
+Sprint G (AI + Conditional) ← unique differentiation
   |
-Sprint H (Performance)   ← scalabilite
+Sprint H (Performance)    ← scalability
   |
-Sprint I (Integrations)  ← adoption enterprise
+Sprint I (Integrations)   ← enterprise adoption
   |
-Sprint J (Community)     ← croissance organique
+Sprint J (Community)      ← organic growth
 ```
 
-## Metriques de succes
+## Success metrics
 
-| Metrique | 3 mois | 6 mois | 12 mois |
+| Metric | 3 months | 6 months | 12 months |
 |---|---|---|---|
-| npm weekly downloads | 500 | 2 000 | 5 000+ |
-| GitHub stars | 200 | 1 000 | 3 000+ |
-| Templates inclus | 20 | 50 | 100+ |
-| Plugins officiels | 2 | 5 | 10+ |
-| Tests coverage | 80% | 90% | 95% |
+| npm weekly downloads | 500 | 2,000 | 5,000+ |
+| GitHub stars | 200 | 1,000 | 3,000+ |
+| Included templates | 20 | 50 | 100+ |
+| Official plugins | 2 | 5 | 10+ |
+| Test coverage | 80% | 90% | 95% |
 | Lighthouse a11y | 90+ | 95+ | 98+ |
