@@ -1,6 +1,6 @@
 {
   "name": "vue3-email-template-editor",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Vue 3 drag-and-drop email template editor with AI-assisted editing, built on MJML",
   "license": "MIT",
   "type": "module",
